@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="./js/marked.js"></script>
+    <script>
+
+  
+    function updatePreview() {
+        let previewElement = document.getElementById("preview");
+        let textValue = document.getElementById("editor").value;
+        let markedHtml = marked.parse(textValue)
+        previewElement.innerHTML = marked.parse(markedHtml)
+    }
+    
+    function setDefault() {
+        let defaultText = ` \
+# CreatorLZ Markdown Previewer
+## Turns suspicious hastags into weird HTML
+
+[Visit my FB handle](https://github.com/CreatorLZ)
+
+<dl>
+<dt>Definition list</dt>
+<dd>Is something people use sometimes.</dd>
+
+<dt>Markdown in HTML</dt>
+<dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
+</dl>
+
+\`This is a markdown previewer\`
+
+\`\`\`
+This is an example of a multiline codeblock
+
+\`\`\`
+
+- code
+- eat
+- sleep
+-  repeat
+
+> Becoming sharp!
+
+**Bolded text**
+
+![Green fields](https://st3.depositphotos.com/9880800/15061/i/450/depositphotos_150617900-stock-photo-soccer-ball-on-grass.jpg)
+
+
+`
+        
+        ;
+
+
+    let editorField = document.getElementById("editor");
+    let previewElement = document.getElementById("preview");
+    editorField.value = defaultText;
+    previewElement.innerHTML=argument = marked(defaultText)
+    }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 my-3">
+    <title>Markdown previwer</title>
+</head>
+
+<body onload="setDefault()" class="bg-success">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-center bg-success ">
+                <h1>Markdown previwer </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 bg-primary d-flex flex-column">
+               <h2 class="text-white text-center my-3">Editor</h2>
+                <div class="form-floating"></div>
+
+                <div class="form-floating flex-grow-1 d-flex flex-column">
+                <textarea  id="editor" onkeyup="updatePreview()" class="form-control flex-grow-1"></textarea>
+            </div>
+
+            </div>
+            <div class="col-6 bg-danger">
+                <h2 class="text-white text-center my-3">Preview</h2>
+                <div id="preview">
+
+                </div>
+            </div>
+        </div>
+    
+</div>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</body>
+</html>
